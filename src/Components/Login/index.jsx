@@ -30,7 +30,7 @@ export const Login = () => {
       return false;
     }
 
-    api.post("/doador/login", {
+    api.post("/login", {
       "email": usuarioEmail,
       "senha": usuarioSenha
     })
@@ -69,7 +69,7 @@ export const Login = () => {
     }
 
     if (senha.length < 8) {
-      mensagens.push("A senha precisa conter 8 caracteres ou mais");
+      mensagens.push("A senha precisa conter mais de 8 caracteres");
     }
 
     return mensagens;
@@ -80,8 +80,8 @@ export const Login = () => {
     <main>
 
 
-      
-        
+
+
           <div className="wrap-login justify-content-center">
             <form className="login-form" onSubmit={(evento) => handleSubmit(evento)}>
               <span className="login-form-title"> Bem vindo! </span>
@@ -118,17 +118,17 @@ export const Login = () => {
               </div>
               <div className="text-center">
                 <span className="txt1">Você é Ong? </span>
-                <Link className="form-ong" to="/cadastro/ong">Cadastrar sua ONG.</Link>
+                <Link className="form-ong" to="/">Cadastrar sua ONG.</Link>
               </div>
               <div className="text-center">
                 <span className="txt1">Esqueceu a Senha? </span>
-                <Link className="senha" to="/alterarsenha">Esqueci minha senha.</Link>
+                <Link className="senha" to="/usuarios/atualizar">Esqueci minha senha.</Link>
               </div>
 
             </form>
           </div>
-        
-      
+
+
     </main>
   )
 }
